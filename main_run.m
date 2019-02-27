@@ -44,7 +44,7 @@ disp(['Done.    Running time: ', num2str(runtime), ' sec.'])
 % 
 % % Selecting nodes from the consensus factors
 % xita = 1.5;
-% modules_final = modulesTruing( Hc, xita );
+% modules_final = moduleNodesSelection( Hc, xita );
 % runtime = toc;
 % disp(['Running time: ', num2str(runtime), ' sec.'])
 

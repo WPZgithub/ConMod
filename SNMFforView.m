@@ -5,7 +5,7 @@ function [ H ] = SNMFforView(X, Hc, H, lambda, maxIter, epsilon)
 %   X: the adjacency matrix of a network
 %   Hc: initialization for consensus factor matrix 
 %   H: initialization for factor matrix of each view
-%   lambda: a vector containing the parameters for balancing the relative
+%   lambda: a vector which contains the parameters for balancing the relative
 %           weight among different views
 %   MaxIter: the maximal number of iterations for alternating minimization
 %   epsilon: the convergence parameter

@@ -10,7 +10,6 @@ function [ TPR, FPR, Accuracy, MCC ] = evaluation(C_preticted, C_reference, N)
 %       FPR: the False Positive Rate
 %       Accuracy:
 %       MCC: the Matthews Correlation Coefficient
-%       I: Confusion Matrix
 %
 % Peizhuo Wang (wangpeizhuo_37@163.com)
 

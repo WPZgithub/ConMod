@@ -2,14 +2,14 @@ function [ H, Hc, objValue ] = multiViewNMF( X, K, lambda, maxIter )
 % Multi-View Non-negative symmetric Matrix Factorization
 %
 % INPUT:
-%   X: a cell containing symmetric matrices
+%   X: a cell which contains symmetric matrices
 %   K: the number of hidden factors
-%   lambda: a vector containing the parameters for balancing the relative
+%   lambda: a vector which contains the parameters for balancing the relative
 %                weight among different views
 %   maxiter: the maximum number of iterations
 %
 % OUTPUT:
-%   H: a cell containing factor matrices for all views
+%   H: a cell which contains factor matrices for all views
 %   Hc: the result consensus factor matrix
 %   objValue: the value of objective function
 %
@@ -86,9 +86,9 @@ for iter = 1:maxIter
         obj_consensus = norm(H{i} - Hc, 'fro')^2;
         obj = obj + obj_body + lambda(i)*obj_consensus;
    
-        errX = mean(mean(abs(obj_body)))/mean(mean(X{i}));
-        errH = mean(mean(abs(obj_consensus)))/mean(mean(H{i}));
-        err = errX + errH;
+%         errX = mean(mean(abs(obj_body)))/mean(mean(X{i}));
+%         errH = mean(mean(abs(obj_consensus)))/mean(mean(H{i}));
+%         err = errX + errH;
     end
     
     

@@ -2,8 +2,8 @@ function [ Strength, Participation ] = featureNets( multiNetworks, N )
 % Compute two feature metrices from multiple networks
 %
 % INPUT:
-%   multiNetworks : a cell contains multiple networks, each of which is
-%                   presented by edgelist format or a full matrix
+%   multiNetworks : a cell contains multiple networks, each is
+%                   presented by a sparse matrix or a full matrix
 %                   with N nodes
 %   N : the number of all nodes
 %
@@ -19,7 +19,7 @@ network_count = length(multiNetworks);
 Strength = zeros(N);
 temp = zeros(N);
 A = zeros(N);
-if (m <= 3) % Edgelist format
+if (m <= 3) % Sparse matrix format
     for k = 1:network_count
         theMatrix = multiNetworks{k};
         [edge_count, col_count] = size(theMatrix);
@@ -73,9 +73,9 @@ end
 Participation = (network_count/(network_count-1)) * (1-(temp./(A.^2)));
 Participation(isinf(Participation)) = 0;
 Participation(isnan(Participation)) = 0;
-Participation = Participation - diag(diag(Participation)); % The diagonal is 0
+Participation = Participation - diag(diag(Participation));
 
 Strength = A./network_count;
-Strength = Strength - diag(diag(Strength)); % The diagonal is 0
+Strength = Strength - diag(diag(Strength));
 
 end

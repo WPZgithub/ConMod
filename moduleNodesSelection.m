@@ -1,13 +1,13 @@
 function [ modulesFinal ] = moduleNodesSelection( Hc, xita )
-%  Assigning the module members by a soft node selection procedure
-% and then truing the modules to obtain more accurate results
+%  A soft node selection procedure from the consensus factors to assign the module members 
+% and then truing the  modules to obtain more accurate results
 %
 % INPUT:
 %   Hc: the consensus factor matrix
 %   xita: the parameter for selecting nodes
 %
 % OUTPUT:
-%   modulesFinal: a cell which contains the final result modules
+%   modulesFinal: a cell contains the final result modules
 %
 % Peizhuo Wang (wangpeizhuo_37@163.com)
 
@@ -26,7 +26,7 @@ modulesFinal = candidateModules;
 
 for i = 1:size(HPI, 1)-1
     for j = (i+1):size(HPI, 2)
-        if HPI(i,j)>0.5 % merge these two modules
+        if HPI(i,j)>0.5
             [Y, I] = max([moduleSignal(i), moduleSignal(j)]);
             if I == 1
                 modulesFinal{j} = [];
@@ -43,7 +43,6 @@ for i = 1:size(HPI, 1)-1
     end
 end
 
-% Only modules with no less than 5 nodes are kept
 i = 1;
 while i ~= length(modulesFinal)+1
     if isempty(modulesFinal{i}) || (length(modulesFinal{i})<5)

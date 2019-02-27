@@ -7,7 +7,7 @@ This algorithm is implemented primarily in Matlab 2015b.
 
 ## Usage
 
-### Input Format
+### Input format
 
 The code takes a series of networks as an input. These networks must be stored in a variable of type *cell* in matlab. Each network can be represented by the following two types:
 

@@ -1,5 +1,9 @@
 # ConMod
 
+<div align=center>
+<img src="https://github.com/WPZgithub/ConMod/blob/master/ConMod.png" width = 300 height = 300>
+</div>
+
 This algorithm is used for identifying conserved functional modules in multiple networks, as described in:
 > Feature related multi-view nonnegative matrix factorization for identifying conserved functional modules in multiple biological networks. Peizhuo Wang, Lin Gao, Yuxuan Hu and Feng Li. BMC Bioinformatics, 2018, 19(1): 394.
 
